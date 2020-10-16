@@ -1,0 +1,51 @@
+#include<stdio.h>
+int main()
+{
+int ch;
+float a, b, x;
+do
+{
+printf("\n === CALCULATOR ===\n\n");
+printf("1. Addition\n");
+printf("2. Subtraction\n");
+printf("3. Multiplication\n");
+printf("4. Division\n");
+printf("5. Exit\n");
+printf("Enter your choice: ");
+scanf("%d", &ch);
+if(ch == 1 || ch == 2 || ch == 3)
+{
+printf("Enter A and B: ");
+scanf("%f %f", &a, &b);
+}
+switch(ch)
+{
+case 1: x = a+b;
+printf("Sum of %.2f and %.2f = %.2f\n", a, b, x);
+break;
+case 2: x = a-b;
+printf("Subtraction of %.2f by %.2f = %.2f\n", a, b, x);
+break;
+case 3: x = a*b;
+printf("Multiplication of %.2f and %.2f = %.2f\n", a, b, x);
+break;
+case 4: printf("Enter Numerator: ");
+scanf("%f", &a);
+printf("Enter Denominator: ");
+scanf("%f", &b);
+if(b==0)
+printf("Division cannot be performed since Denominator is
+equal to zero.\n");
+else
+{
+x = a/b;
+printf("Division of %.2f by %.2f = %.2f\n", a, b, x);
+}
+break;
+case 5: printf("Thank You!");
+break;
+default: printf("Invalid choice!! Please enter a correct choice.\n");
+}
+}while(ch!=5);
+return 0;
+}
